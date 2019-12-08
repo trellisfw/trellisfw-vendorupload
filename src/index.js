@@ -4,47 +4,56 @@
  * send chunks
  * node 11.15
  */
+/** @jsx jsx */
 
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 
 import { Container } from '@cerebral/react';
-// import { jsx, css } from '@emotion/core';
+import { jsx, css, Global } from '@emotion/core';
 
 import cerebral from './cerebral';
-import Upload from './components/Upload';
-// import Download from './components/Download';
+import BinaryUpload from './BinaryUpload';
 
 ReactDOM.render(
   <Container app={cerebral}>
-    {/*
     <Global
       styles={css`
         * {
           --black: #000000;
-          --background: #272822;
+          --bg-dark: #272822;
+          --bg-light: #efede8;
 
-          --text-dark: #777872;
+          --button-fwd: #f27100;
+          --button-bck: #ffffff;
+
+          --text-dark: #333333;
           --text-light: #f3f3f3;
           --text-bright: #f92672;
         }
 
         html {
-          background: var(--background);
-          color: var(--text-light);
+          background: var(--bg-light);
+          color: var(--text-dark);
+          height: 100%;
+          width: 100%;
+        }
+
+        body {
           height: 100%;
           width: 100%;
         }
       `}
     />
-    */}
-    <Upload />
+    <h1
+      css={css`
+        color: var(--text-dark);
+        text-align: center;
+      `}
+    > Oada Binary Upload </h1>
+    <BinaryUpload />
   </Container>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
