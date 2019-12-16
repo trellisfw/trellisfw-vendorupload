@@ -15,7 +15,7 @@ import uuid from 'uuid';
 
 export const setFile = [
   // set file values in state
-  ({ store, get }) => {
+  ({ store }) => {
     // store.set(state`fileUpload.file_name`, get(props`file_name`));
     store.set(state`fileUpload.is_loaded`, true);
     store.set(state`fileUpload.uuid`, uuid.v4());
@@ -31,15 +31,16 @@ export const uploadF = [
     try {
 
       console.log("upload file");
-      // console.log(files);
       const file = document.getElementById('rdz-input').files[0];
       console.log(file)
 
       let form_data = new FormData();
       form_data.append("file", file);
-      await http.post('http://localhost:8000', form_data, {
+      await http.post('http://localhost/resources', form_data, {
         header: {
           'Content-Type': 'multipart/form-data',
+          // XXX This is for development ONLY
+          'Authorization': 'Bearer def',
         }
       });
 
