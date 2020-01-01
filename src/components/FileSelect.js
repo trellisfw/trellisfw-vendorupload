@@ -1,12 +1,8 @@
 /** @jsx jsx */
 
-// import React from 'react';
-
-// import { useCallback } from 'react';
 import { state, sequences } from 'cerebral';
 import { connect } from '@cerebral/react';
 import { jsx, css } from '@emotion/core';
-// import  OadaDropdown  from './Dropdown';
 
 import ReactDropzone from 'react-dropzone';
 
