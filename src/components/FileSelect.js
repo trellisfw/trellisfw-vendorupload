@@ -25,14 +25,14 @@ const FileSelect = connect(
   ) => {
     return (
       <div
-        className="Upload"
+        className="Select"
         css={css`
-          height: 30vh;
-          width: 98vw;
+          height: 30%;
+          width: 98%;
 
           display: grid;
-          grid-template-columns: 5fr 15fr 20fr 20fr 20fr 15fr 5fr;
-          grid-template-rows: 10fr 30fr 10fr;
+          grid-template-columns: 1fr 3fr 4fr 4fr 4fr 3fr 1fr;
+          grid-template-rows: 1fr 3fr 1fr;
           border-top: thin solid grey;
           border-bottom: thin solid grey;
         `}

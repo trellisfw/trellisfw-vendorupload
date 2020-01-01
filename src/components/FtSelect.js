@@ -2,7 +2,11 @@
 
 // import List  from '@material-ui/core/List';
 // import ListItem from '@material-ui/core/ListItem';
-import { Form, Radio } from 'semantic-ui-react';
+// import { Form, Radio } from 'semantic-ui-react';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
 
 import { connect } from '@cerebral/react';
 import { jsx, css } from '@emotion/core';
@@ -24,8 +28,8 @@ const FtSelect = connect(
     return (
       <div
         css={css`
-          height: 30vh;
-          width: 98vw;
+          height: 30%;
+          width: 98%;
 
           display: grid;
           grid-template-columns: 5fr 15fr 20fr 20fr 20fr 15fr 5fr;
@@ -42,6 +46,25 @@ const FtSelect = connect(
           `}
         >2. Select File Type</p>
 
+        <FormControl
+          css={css`
+            grid-column-start: 4;
+          `}
+        >
+          <InputLabel id="FtSelect">File Type</InputLabel>
+          <Select
+            css={css`
+            `}
+          >
+            {supportedFt.supportedFt.map((ft) => {
+              return (
+                <MenuItem value={ft}>{ft}</MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+
+      {/*
         <Form
           css={css`
             overflow: auto;
@@ -62,6 +85,7 @@ const FtSelect = connect(
             );
           })}
         </Form>
+      */}
       </div>
     );
   }
